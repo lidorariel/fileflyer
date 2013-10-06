@@ -60,8 +60,8 @@ Class Fileflyer {
                 curl_setopt($ch,CURLOPT_URL,$url);
                 curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $res = curl_exec($ch);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		$res = curl_exec($ch);
 		curl_close($ch);
  
 		$count = substr_count($res, '<table border="0" cellpadding="0" cellspacing="0" class="fileslist">');
@@ -73,15 +73,15 @@ Class Fileflyer {
 		$valid = $this->potong($res,'">To report a ',' ,'); // Trying to know if the file valid
 		$expired = $this->potong($list[$i],'<span class="removed','><a'); // Trying to know if the file was expired
 		$removed = $this->potong($list[$i],'<span class="removedlink"><a id="ItemsList_ctl00_','"'); // Trying to know if the file was removed
-        $filename = $this->potong($list[$i],'file" title="','"');  // Getting the File name
+		$filename = $this->potong($list[$i],'file" title="','"');  // Getting the File name
 		$minus = $i - 1;
-        $filesize = $this->potong($list[$i],'<span id="ItemsList_ctl0'.$minus.'_size">','<');  // Getting the File size
+        	$filesize = $this->potong($list[$i],'<span id="ItemsList_ctl0'.$minus.'_size">','<');  // Getting the File size
 		$posturl = $this->potong($res,'action="','"');
 			if($expired == 'link"') return("Fatal Error: Sorry but this file was expired.");
 			if($valid == "bug") return("Fatal Error: Sorry but the file was not found.");
        			if($removed == "RemovedLink") return("Fatal Error: Sorry but the file was removed.");
-				if($link == ""){ // Password Needed
-				if($password == "") return("Fatal Error: Please enter a password.");
+			if($link == ""){ // Password Needed
+			if($password == "") return("Fatal Error: Please enter a password.");
 				
                         $viewstate = $this->potong($res,'"__VIEWSTATE" value="','"');
                         $eventvalidation = $this->potong($res,'id="__EVENTVALIDATION" value="','" />');
@@ -113,15 +113,14 @@ Class Fileflyer {
 						
                         $link = $this->potong($result,'class="dwlbtn" href="http','"');
                         if($link == ""){
-								$return[$i]['link'] = "Please enter a valid password to get link";
+				$return[$i]['link'] = "Please enter a valid password to get link";
                         }else{
-							if($link == TRUE)
-							{
-								$return[$i]['link'] = "http" . $link;
-							}		
+				if($link == TRUE)
+				{
+					$return[$i]['link'] = "http" . $link;
+				}		
                         }
-						if($link == "" && $password != "")  return("Fatal Error: Maybe your Fileflyer password is not working or Fileflyer were blocked this script. Please contact the developer - Dowser.");
-                       
+				if($link == "" && $password != "")  return("Fatal Error: Maybe your Fileflyer password is not working or Fileflyer were blocked this script. Please contact the developer - Dowser.");
                 }else{ // No Password Needed           
                             if($link == TRUE)
 							{
@@ -129,16 +128,16 @@ Class Fileflyer {
 							}
 							if($link == ""){return("Fatal Error: Maybe your Fileflyer password is not working or Fileflyer were blocked this script. Please contact the developer - Dowser.");}	
                 }
-				if($name == TRUE)
-				{
-					$return[$i]['name'] = $filename;
-				}
-				if($size == TRUE)
-				{
-					$return[$i]['size'] = $filesize;
-				}
+			if($name == TRUE)
+			{
+				$return[$i]['name'] = $filename;
+			}
+			if($size == TRUE)
+			{
+				$return[$i]['size'] = $filesize;
+			}
 		}
-				return $return;
+			return $return;
 		}
 }
 /**   End Of The Script   **/
