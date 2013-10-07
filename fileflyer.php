@@ -145,7 +145,7 @@ Class Fileflyer {
 }
 /**   End Of The Script   **/
 
-$password = "FFS1M711713983";
+$password = "";
 $id = $_GET['id'];
 
 $fileflyer = New Fileflyer;
