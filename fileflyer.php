@@ -2,7 +2,7 @@
 /**
  
  
- (¯`·.¸¸.·´¯`·.¸¸.-> Fileflyer INFO Get Script (Link Opener) V3.1 By Dowser <-.¸¸.·´¯`·.¸¸.·´¯)
+ (¯`·.¸¸.·´¯`·.¸¸.-> Fileflyer INFO Get Script (Link Fetcher) V3.1 By Dowser <-.¸¸.·´¯`·.¸¸.·´¯)
  
  
 This script just get the INFO of any FILEFLYER file using a FILEFLYER password.. But also works without a password.
