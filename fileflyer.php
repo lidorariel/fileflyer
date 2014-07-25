@@ -52,7 +52,7 @@ Class Fileflyer {
 		public function Get($password,$id,$link,$name,$size){
 		if($id == "") return("Fatal Error: Please enter an ID for a Fileflyer file.");
 		
-		$url = "http://www.fileflyer.com/view/" . $id; // The Fileflyer Link
+		$url = "http://www.fileflyer.com/view/mjanlAX" . $id; // The Fileflyer Link
 		$cookietime = time() + 100;
 		$useragent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36"; // The Useragent
 		
